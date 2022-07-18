@@ -82,3 +82,17 @@
   const p = new Player()
   console.log((<any>p).getPositon())
 }
+
+{
+  const showDecorator: MethodDecorator = (...args: any[]) => {
+    console.log(args)
+    args[0].name = "mick"
+  }
+
+  class User {
+    @showDecorator
+    public show() {}
+  }
+
+  // console.log(new User().name)
+}
